@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "tasks": [
+        {
+            "label": "Build and run",
+            "type": "shell",
+            "command": "cd app && go build -o compress.exe && compress.exe",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build only",
+            "type": "shell",
+            "command": "cd app && go build -o compress.exe",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build optimized",
+            "type": "shell",
+            "command": "cd app && go build -ldflags=\"-s -w\" -o compress.exe",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
